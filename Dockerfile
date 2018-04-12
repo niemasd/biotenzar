@@ -1,3 +1,2 @@
-FROM alpine:latest
+FROM debian:latest
 MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
-RUN apk add --no-cache curl

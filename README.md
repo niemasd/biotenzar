@@ -1,2 +1,2 @@
-# BioTenzar: TopHat 2.1.0
+# BioTenzar: pgltools
 Bioinformatics Tools for the Tenzar Platform

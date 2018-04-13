@@ -1,7 +1,12 @@
 FROM debian:latest
 MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y cmake curl gcc git g++ libbz2-dev libz-dev make man-db python python-pip wget zlib1g zlib1g-dev
+RUN apt-get install -y cmake curl gcc git g++ less libbz2-dev libtbb-dev libz-dev make man-db python python-pip unzip wget zlib1g zlib1g-dev
+
+# bowtie
+RUN wget -q https://cfhcable.dl.sourceforge.net/project/bowtie-bio/bowtie/1.2.2/bowtie-1.2.2-linux-x86_64.zip && unzip bowtie-1.2.2-linux-x86_64.zip && rm bowtie-1.2.2-linux-x86_64.zip
+RUN mv bowtie-1.2.2-linux-x86_64/bowtie* /usr/local/bin
+RUN rm -rf bowtie-1.2.2-linux-x86_64
 
 # BWA
 RUN git clone https://github.com/lh3/bwa.git

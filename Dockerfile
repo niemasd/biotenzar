@@ -1,7 +1,7 @@
 FROM debian:latest
 MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y cmake curl gcc git g++ less libbz2-dev libtbb-dev libz-dev make man-db perl python python-pip unzip wget zlib1g zlib1g-dev
+RUN apt-get install -y bzip2 cmake curl gcc git g++ less libbz2-dev liblzma-dev libncurses5-dev libtbb-dev libz-dev make man-db perl python python-pip unzip wget zlib1g zlib1g-dev
 
 # Bowtie
 RUN wget -q https://cfhcable.dl.sourceforge.net/project/bowtie-bio/bowtie/1.2.2/bowtie-1.2.2-linux-x86_64.zip && unzip bowtie-1.2.2-linux-x86_64.zip && rm bowtie-1.2.2-linux-x86_64.zip
@@ -31,6 +31,12 @@ RUN cd ../..
 RUN cd mafft-7.394-with-extensions/extensions && make clean && make && make install
 RUN cd ../..
 RUN rm -rf mafft-7.394-with-extensions
+
+# SAMtools
+RUN wget -qO- https://github.com/samtools/samtools/releases/download/1.8/samtools-1.8.tar.bz2 | tar -jx
+RUN cd samtools-1.8 && ./configure --prefix=/usr/local && make && make install
+RUN cd ..
+RUN rm -rf samtools-1.8
 
 # SPAdes
 RUN curl -s http://cab.spbu.ru/files/release3.11.1/SPAdes-3.11.1-Linux.tar.gz | tar -zx

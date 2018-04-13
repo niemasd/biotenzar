@@ -1,2 +1,2 @@
-# BioTenzar: MAFFT 7.394
+# BioTenzar: MAFFT 7.271
 Bioinformatics Tools for the Tenzar Platform

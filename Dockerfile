@@ -20,9 +20,7 @@ RUN cd ..
 RUN rm -rf bedtools2
 
 # Bowtie
-RUN wget -q https://cfhcable.dl.sourceforge.net/project/bowtie-bio/bowtie/1.2.2/bowtie-1.2.2-linux-x86_64.zip && unzip bowtie-1.2.2-linux-x86_64.zip && rm bowtie-1.2.2-linux-x86_64.zip
-RUN mv bowtie-1.2.2-linux-x86_64/bowtie* /usr/local/bin
-RUN rm -rf bowtie-1.2.2-linux-x86_64
+RUN apt-get install -y bowtie
 
 # Bowtie2
 RUN wget -q https://astuteinternet.dl.sourceforge.net/project/bowtie-bio/bowtie2/2.3.4.1/bowtie2-2.3.4.1-linux-x86_64.zip && unzip bowtie2-2.3.4.1-linux-x86_64.zip && rm bowtie2-2.3.4.1-linux-x86_64.zip

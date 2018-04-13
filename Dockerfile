@@ -2,6 +2,6 @@ FROM debian:latest
 MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
 RUN apt-get update && apt-get -y upgrade
 RUN apt-get install -y wget default-jdk
-RUN wget -qO- https://github.com/beast-dev/beast-mcmc/releases/download/v1.8.4/BEASTv1.8.4.tgz | tar -zx
-RUN mv BEASTv1.8.4 /usr/local/bin && ln -s /usr/local/bin/BEASTv1.8.4/bin/* /usr/local/bin
+RUN wget -qO- https://github.com/CompEvol/beast2/releases/download/v2.5.0/BEAST.v2.5.0.Linux.tgz | tar -zx
+RUN mv beast /usr/local/bin/beast_files && ln -s /usr/local/bin/beast_files/bin/* /usr/local/bin
 RUN apt-get clean

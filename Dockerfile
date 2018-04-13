@@ -5,7 +5,7 @@ RUN apt-get install -y curl gcc git g++ libz-dev make man-db wget
 
 # BWA
 RUN git clone https://github.com/lh3/bwa.git
-RUN cd bwa && make && mv bwa /usr/local/bin && mkdir /usr/local/share/man/man1 && mv bwa.1 /usr/local/share/man/man1 && mandb
+RUN cd bwa && make && mv bwa /usr/local/bin && mkdir -p /usr/local/share/man/man1 && mv bwa.1 /usr/local/share/man/man1 && mandb
 RUN cd ..
 RUN rm -rf bwa
 

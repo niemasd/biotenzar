@@ -1,7 +1,7 @@
 FROM debian:latest
 MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y bzip2 cmake curl gcc git g++ less libbz2-dev liblzma-dev libncurses5-dev libtbb-dev libz-dev make man-db perl pkg-config python python-pip unzip wget zlib1g zlib1g-dev
+RUN apt-get install -y bzip2 cmake curl gcc git g++ less libboost-all-dev libbz2-dev liblzma-dev libncurses5-dev libtbb-dev libz-dev make man-db perl pkg-config python python-pip unzip wget zlib1g zlib1g-dev
 
 # BCFtools
 RUN wget -qO- https://github.com/samtools/bcftools/releases/download/1.8/bcftools-1.8.tar.bz2 | tar -jx
@@ -24,6 +24,12 @@ RUN git clone https://github.com/lh3/bwa.git
 RUN cd bwa && make && mv bwa /usr/local/bin && mkdir -p /usr/local/share/man/man1 && mv bwa.1 /usr/local/share/man/man1
 RUN cd ..
 RUN rm -rf bwa
+
+# Cufflinks
+RUN curl -s http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.1.Linux_x86_64.tar.gz | tar -zx
+RUN rm cufflinks-2.2.1.Linux_x86_64/AUTHORS cufflinks-2.2.1.Linux_x86_64/LICENSE cufflinks-2.2.1.Linux_x86_64/README
+RUN mv cufflinks-2.2.1.Linux_x86_64/* /usr/local/bin
+RUN rm -rf cufflinks-2.2.1.Linux_x86_64
 
 # FastTree
 RUN curl http://www.microbesonline.org/fasttree/FastTree.c > FastTree.c

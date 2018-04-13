@@ -1,10 +1,7 @@
 FROM debian:latest
 MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y gcc g++ curl make
-RUN curl -s https://mafft.cbrc.jp/alignment/software/mafft-7.394-with-extensions-src.tgz | tar -zx
-RUN cd mafft-7.394-with-extensions/core && make clean && make && make install
-RUN cd ../..
-RUN cd mafft-7.394-with-extensions/extensions && make clean && make && make install
-RUN cd ../..
-RUN rm -rf mafft-7.394-with-extensions && apt-get clean
+RUN apt-get install -y #gcc g++ curl make
+RUN curl -s http://cab.spbu.ru/files/release3.11.1/SPAdes-3.11.1-Linux.tar.gz | tar -zx
+RUN mv SPAdes-3.11.1-Linux/bin/* /usr/local/bin && mv SPAdes-3.11.1-Linux/share/* /usr/local/share
+RUN rm -rf SPAdes-3.11.1-Linux && apt-get clean

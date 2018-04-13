@@ -1,2 +1,2 @@
-# BioTenzar: FastTree 2.1
+# BioTenzar: UCSC Genome Browser Utilities
 Bioinformatics Tools for the Tenzar Platform

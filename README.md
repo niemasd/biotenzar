@@ -21,4 +21,5 @@ Bioinformatics Tools for the Tenzar Platform
 * [STAR 2.5.0a](https://github.com/alexdobin/STAR)
 * [TopHat 2.1.0](http://ccb.jhu.edu/software/tophat/index.shtml)
 * [Trimmomatic 0.35](http://www.usadellab.org/cms/?page=trimmomatic)
+* [UCSC Genome Browser Utilities](http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/)
 * [VCFtools 0.1.14](https://vcftools.github.io/index.html)

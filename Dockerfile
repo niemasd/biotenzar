@@ -46,6 +46,12 @@ RUN curl http://www.microbesonline.org/fasttree/FastTree.c > FastTree.c
 RUN gcc -DUSE_DOUBLE -DOPENMP -fopenmp -O3 -finline-functions -funroll-loops -Wall -o FastTree FastTree.c -lm
 RUN mv FastTree /usr/local/bin && rm FastTree.c
 
+# HMMER
+RUN curl -s http://eddylab.org/software/hmmer3/3.1b2/hmmer-3.1b2.tar.gz | tar -zx
+RUN cd hmmer-3.1b2 && ./configure --prefix=/usr/local && make && make install
+RUN cd ..
+RUN rm -rf hmmer-3.1b2
+
 # MAFFT
 RUN curl -s https://mafft.cbrc.jp/alignment/software/mafft-7.394-with-extensions-src.tgz | tar -zx
 RUN cd mafft-7.394-with-extensions/core && make clean && make && make install

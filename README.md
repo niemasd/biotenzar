@@ -1,2 +1,2 @@
-# BioTenzar: BCFtools 1.8
+# BioTenzar: HIV-TRACE
 Bioinformatics Tools for the Tenzar Platform

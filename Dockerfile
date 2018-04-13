@@ -76,10 +76,7 @@ RUN mv SPAdes-3.11.1-Linux/bin/* /usr/local/bin && mv SPAdes-3.11.1-Linux/share/
 RUN rm -rf SPAdes-3.11.1-Linux
 
 # TopHat
-RUN curl -s http://ccb.jhu.edu/software/tophat/downloads/tophat-2.1.1.tar.gz | tar -zx
-RUN cd tophat-2.1.1 && ./configure --prefix=/usr/local && make && make install
-RUN cd ..
-RUN rm -rf tophat-2.1.1
+RUN apt-get install -y tophat
 
 # Trimmomatic
 RUN wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.36.zip && unzip Trimmomatic-0.36.zip && rm Trimmomatic-0.36.zip

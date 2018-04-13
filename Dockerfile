@@ -58,14 +58,6 @@ RUN rm -rf tn93
 # HMMER
 RUN apt-get install -y hmmer
 
-# kallisto
-RUN wget -qO- https://github.com/pachterlab/kallisto/archive/v0.44.0.tar.gz | tar -zx
-RUN cd kallisto-0.44.0/ext/htslib/ && autoreconf
-RUN cd ../..
-RUN mkdir -p build && cd build && cmake .. && make && make install
-RUN cd ../..
-RUN rm -rf kallisto-0.44.0
-
 # MAFFT
 RUN apt-get install -y mafft
 

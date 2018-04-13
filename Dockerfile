@@ -23,9 +23,7 @@ RUN rm -rf bedtools2
 RUN apt-get install -y bowtie
 
 # Bowtie2
-RUN wget -q https://astuteinternet.dl.sourceforge.net/project/bowtie-bio/bowtie2/2.3.4.1/bowtie2-2.3.4.1-linux-x86_64.zip && unzip bowtie2-2.3.4.1-linux-x86_64.zip && rm bowtie2-2.3.4.1-linux-x86_64.zip
-RUN mv bowtie2-2.3.4.1-linux-x86_64/bowtie* /usr/local/bin
-RUN rm -rf bowtie2-2.3.4.1-linux-x86_64
+RUN apt-get install -y bowtie2
 
 # BWA
 RUN git clone https://github.com/lh3/bwa.git

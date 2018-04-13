@@ -1,2 +1,2 @@
-# BioTenzar: FastTree 2.1
+# BioTenzar: VCFtools 0.1.15
 Bioinformatics Tools for the Tenzar Platform

@@ -12,7 +12,6 @@ Bioinformatics Tools for the Tenzar Platform
 * [FastTree 2.1](http://www.microbesonline.org/fasttree)
 * [HIV-TRACE](https://github.com/veg/hivtrace)
 * [HMMER 3.1b2](http://hmmer.org/)
-* [kallisto 0.44.0](https://pachterlab.github.io/kallisto/)
 * [MAFFT 7.271](https://mafft.cbrc.jp/alignment/software/)
 * [MrBayes 3.2.6](http://mrbayes.sourceforge.net/)
 * [pgltools 2.1.4](https://github.com/billgreenwald/pgltools)

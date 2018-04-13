@@ -1,5 +1,6 @@
 # BioTenzar
 Bioinformatics Tools for the Tenzar Platform
+* [BCFtools 1.8](http://www.htslib.org/)
 * [Bowtie 1.2.2](http://bowtie-bio.sourceforge.net/index.shtml)
 * [Bowtie2 2.3.4.1](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
 * [BWA](https://github.com/lh3/bwa)

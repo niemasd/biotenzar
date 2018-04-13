@@ -1,2 +1,2 @@
-# BioTenzar: Trimmomatic 0.36
+# BioTenzar: Trimmomatic 0.35
 Bioinformatics Tools for the Tenzar Platform

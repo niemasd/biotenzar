@@ -1,2 +1,2 @@
-# BioTenzar: RAxML 8.2.4
+# BioTenzar: MrBayes 3.2.6
 Bioinformatics Tools for the Tenzar Platform

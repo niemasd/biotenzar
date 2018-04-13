@@ -1,7 +1,7 @@
 FROM debian:latest
 MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y cmake curl gcc git g++ libbz2-dev libz-dev make man-db python wget zlib1g zlib1g-dev
+RUN apt-get install -y cmake curl gcc git g++ libbz2-dev libz-dev make man-db python python-pip wget zlib1g zlib1g-dev
 
 # BWA
 RUN git clone https://github.com/lh3/bwa.git

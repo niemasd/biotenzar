@@ -3,7 +3,7 @@ Bioinformatics Tools for the Tenzar Platform
 * [BCFtools 1.8](http://www.htslib.org/)
 * [BEAST 1.8.4](http://beast.community/)
 * [BEAST 2.5.0](http://www.beast2.org/)
-* [bedtools 2.27.1](http://bedtools.readthedocs.io/)
+* [bedtools 2.25.0](http://bedtools.readthedocs.io/)
 * [Bowtie 1.1.2](http://bowtie-bio.sourceforge.net/index.shtml)
 * [Bowtie2 2.2.6](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
 * [BWA](https://github.com/lh3/bwa)

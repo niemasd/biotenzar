@@ -12,6 +12,7 @@ Bioinformatics Tools for the Tenzar Platform
 * [FastTree 2.1](http://www.microbesonline.org/fasttree)
 * [HMMER 3.1b2](http://hmmer.org/)
 * [MAFFT 7.271](https://mafft.cbrc.jp/alignment/software/)
+* [pgltools 2.1.4](https://github.com/billgreenwald/pgltools)
 * [SAMtools 1.8](http://www.htslib.org/)
 * [SPAdes 3.11.1](http://cab.spbu.ru/software/spades/)
 * [TopHat 2.1.0](http://ccb.jhu.edu/software/tophat/index.shtml)

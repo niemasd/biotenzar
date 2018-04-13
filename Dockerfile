@@ -82,6 +82,9 @@ RUN curl -s http://cab.spbu.ru/files/release3.11.1/SPAdes-3.11.1-Linux.tar.gz | 
 RUN mv SPAdes-3.11.1-Linux/bin/* /usr/local/bin && mv SPAdes-3.11.1-Linux/share/* /usr/local/share
 RUN rm -rf SPAdes-3.11.1-Linux
 
+# STAR
+RUN apt-get install -y rna-star
+
 # TopHat
 RUN apt-get install -y tophat
 

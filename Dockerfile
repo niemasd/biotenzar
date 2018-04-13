@@ -1,7 +1,11 @@
 FROM debian:latest
 MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y bzip2 cmake curl default-jre default-jre-headless gcc git g++ htop less libboost-all-dev libbz2-dev liblzma-dev libncurses5-dev libtbb-dev libz-dev make man-db openjdk-8-jre openjdk-8-jre-headless perl pkg-config python python-pip unzip wget zlib1g zlib1g-dev
+RUN apt-get install -y bzip2 cmake curl default-jre default-jre-headless gcc git g++ htop less libboost-all-dev libbz2-dev liblzma-dev libncurses5-dev libtbb-dev libz-dev make man-db openjdk-8-jre openjdk-8-jre-headless perl pkg-config pypy python python-pip unzip wget zlib1g zlib1g-dev
+
+# pip for pypy
+RUN wget https://bootstrap.pypa.io/get-pip.py && pypy get-pip.py  && rm get-pip.py
+RUN for f in easy_install easy_install-2.7 pip pip2 pip2.7 wheel; do mv /usr/local/bin/$f /usr/local/bin/pypy-$f; done
 
 # BCFtools
 RUN wget -qO- https://github.com/samtools/bcftools/releases/download/1.8/bcftools-1.8.tar.bz2 | tar -jx
@@ -47,6 +51,10 @@ RUN apt-get install -y hmmer
 
 # MAFFT
 RUN apt-get install -y mafft
+
+# pgltools
+RUN pypy-pip install PyGLtools
+RUN git clone https://github.com/billgreenwald/pgltools.git && mv pgltools /usr/local/bin/pgltools_files && ln -s /usr/local/bin/pgltools_files/sh/pgltools /usr/local/bin/pgltools
 
 # SAMtools
 RUN wget -qO- https://github.com/samtools/samtools/releases/download/1.8/samtools-1.8.tar.bz2 | tar -jx

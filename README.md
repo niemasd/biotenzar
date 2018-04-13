@@ -13,6 +13,7 @@ Bioinformatics Tools for the Tenzar Platform
 * [HIV-TRACE](https://github.com/veg/hivtrace)
 * [HMMER 3.1b2](http://hmmer.org/)
 * [MAFFT 7.271](https://mafft.cbrc.jp/alignment/software/)
+* [MrBayes 3.2.6](http://mrbayes.sourceforge.net/)
 * [pgltools 2.1.4](https://github.com/billgreenwald/pgltools)
 * [RAxML 8.2.4](https://sco.h-its.org/exelixis/web/software/raxml/index.html)
 * [SAMtools 1.8](http://www.htslib.org/)

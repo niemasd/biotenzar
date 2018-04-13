@@ -66,10 +66,7 @@ RUN apt-get install -y tophat
 RUN apt-get install -y trimmomatic
 
 # VCFtools
-RUN wget -qO- https://github.com/vcftools/vcftools/releases/download/v0.1.15/vcftools-0.1.15.tar.gz | tar -zx
-RUN cd vcftools-0.1.15 && ./configure --prefix=/usr/local && make && make install
-RUN cd ..
-RUN rm -rf vcftools-0.1.15
+RUN apt-get install -y vcftools
 
 # clean up
 RUN mandb && apt-get clean

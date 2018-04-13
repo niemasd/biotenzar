@@ -18,6 +18,7 @@ Bioinformatics Tools for the Tenzar Platform
 * [RAxML 8.2.4](https://sco.h-its.org/exelixis/web/software/raxml/index.html)
 * [SAMtools 1.8](http://www.htslib.org/)
 * [SPAdes 3.11.1](http://cab.spbu.ru/software/spades/)
+* [STAR 2.5.0a](https://github.com/alexdobin/STAR)
 * [TopHat 2.1.0](http://ccb.jhu.edu/software/tophat/index.shtml)
 * [Trimmomatic 0.35](http://www.usadellab.org/cms/?page=trimmomatic)
 * [VCFtools 0.1.14](https://vcftools.github.io/index.html)

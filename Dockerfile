@@ -1,7 +1,8 @@
 FROM debian:latest
 MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y gcc curl
-RUN curl http://www.microbesonline.org/fasttree/FastTree.c > FastTree.c
-RUN gcc -DUSE_DOUBLE -DOPENMP -fopenmp -O3 -finline-functions -funroll-loops -Wall -o FastTree FastTree.c -lm
-RUN mv FastTree /usr/local/bin && rm FastTree.c && apt-get clean
+RUN apt-get install -y curl make g++ python libboost-all-dev
+RUN curl -s http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.1.Linux_x86_64.tar.gz | tar -zx
+RUN rm cufflinks-2.2.1.Linux_x86_64/AUTHORS cufflinks-2.2.1.Linux_x86_64/LICENSE cufflinks-2.2.1.Linux_x86_64/README
+RUN mv cufflinks-2.2.1.Linux_x86_64/* /usr/local/bin
+RUN rm -rf cufflinks-2.2.1.Linux_x86_64 && apt-get clean

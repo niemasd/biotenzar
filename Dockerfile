@@ -77,6 +77,12 @@ RUN cd tophat-2.1.1 && ./configure --prefix=/usr/local && make && make install
 RUN cd ..
 RUN rm -rf tophat-2.1.1
 
+# Trimmomatic
+RUN wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.36.zip && unzip Trimmomatic-0.36.zip && rm Trimmomatic-0.36.zip
+RUN mv Trimmomatic-0.36/trimmomatic-0.36.jar /usr/local/bin
+RUN printf '#!/usr/bin/env bash\njava -jar /usr/local/bin/trimmomatic-0.36.jar\n' > trimmomatic && chmod a+x trimmomatic && mv trimmomatic /usr/local/bin
+RUN rm -rf Trimmomatic-0.36
+
 # VCFtools
 RUN wget -qO- https://github.com/vcftools/vcftools/releases/download/v0.1.15/vcftools-0.1.15.tar.gz | tar -zx
 RUN cd vcftools-0.1.15 && ./configure --prefix=/usr/local && make && make install

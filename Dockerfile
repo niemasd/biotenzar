@@ -14,10 +14,7 @@ RUN wget -qO- https://github.com/CompEvol/beast2/releases/download/v2.5.0/BEAST.
 RUN mv beast /usr/local/bin/beast_files && ln -s /usr/local/bin/beast_files/bin/* /usr/local/bin
 
 # bedtools
-RUN wget -qO- https://github.com/arq5x/bedtools2/releases/download/v2.27.1/bedtools-2.27.1.tar.gz | tar -zx
-RUN cd bedtools2 && make && mv bin/* /usr/local/bin
-RUN cd ..
-RUN rm -rf bedtools2
+RUN apt-get install -y bedtools
 
 # Bowtie
 RUN apt-get install -y bowtie

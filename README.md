@@ -1,2 +1,2 @@
-# BioTenzar: FastTree 2.1
+# BioTenzar: SAMtools 1.8
 Bioinformatics Tools for the Tenzar Platform

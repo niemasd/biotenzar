@@ -14,6 +14,7 @@ Bioinformatics Tools for the Tenzar Platform
 * [HMMER 3.1b2](http://hmmer.org/)
 * [MAFFT 7.271](https://mafft.cbrc.jp/alignment/software/)
 * [pgltools 2.1.4](https://github.com/billgreenwald/pgltools)
+* [RAxML 8.2.4](https://sco.h-its.org/exelixis/web/software/raxml/index.html)
 * [SAMtools 1.8](http://www.htslib.org/)
 * [SPAdes 3.11.1](http://cab.spbu.ru/software/spades/)
 * [TopHat 2.1.0](http://ccb.jhu.edu/software/tophat/index.shtml)

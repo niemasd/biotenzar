@@ -61,6 +61,9 @@ RUN apt-get install -y hmmer
 # MAFFT
 RUN apt-get install -y mafft
 
+# MrBayes
+RUN apt-get install -y mrbayes
+
 # pgltools
 RUN pypy-pip install PyGLtools
 RUN git clone https://github.com/billgreenwald/pgltools.git && mv pgltools /usr/local/bin/pgltools_files && ln -s /usr/local/bin/pgltools_files/sh/pgltools /usr/local/bin/pgltools

@@ -10,6 +10,7 @@ Bioinformatics Tools for the Tenzar Platform
 * [Cufflinks 2.2.1](http://cole-trapnell-lab.github.io/cufflinks/)
 * [FastQC 0.11.4](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 * [FastTree 2.1](http://www.microbesonline.org/fasttree)
+* [HIV-TRACE](https://github.com/veg/hivtrace)
 * [HMMER 3.1b2](http://hmmer.org/)
 * [MAFFT 7.271](https://mafft.cbrc.jp/alignment/software/)
 * [pgltools 2.1.4](https://github.com/billgreenwald/pgltools)

@@ -8,6 +8,7 @@ Bioinformatics Tools for the Tenzar Platform
 * [Cufflinks 2.2.1](http://cole-trapnell-lab.github.io/cufflinks/)
 * [FastQC 0.11.7](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 * [FastTree 2.1](http://www.microbesonline.org/fasttree)
+* [HMMER 3.1b2](http://hmmer.org/)
 * [MAFFT 7.394](https://mafft.cbrc.jp/alignment/software/)
 * [SAMtools 1.8](http://www.htslib.org/)
 * [SPAdes 3.11.1](http://cab.spbu.ru/software/spades/)

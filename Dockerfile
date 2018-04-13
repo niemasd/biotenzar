@@ -21,7 +21,7 @@ RUN rm -rf bowtie2-2.3.4.1-linux-x86_64
 
 # BWA
 RUN git clone https://github.com/lh3/bwa.git
-RUN cd bwa && make && mv bwa /usr/local/bin && mkdir -p /usr/local/share/man/man1 && mv bwa.1 /usr/local/share/man/man1 && mandb
+RUN cd bwa && make && mv bwa /usr/local/bin && mkdir -p /usr/local/share/man/man1 && mv bwa.1 /usr/local/share/man/man1
 RUN cd ..
 RUN rm -rf bwa
 
@@ -49,5 +49,11 @@ RUN curl -s http://cab.spbu.ru/files/release3.11.1/SPAdes-3.11.1-Linux.tar.gz | 
 RUN mv SPAdes-3.11.1-Linux/bin/* /usr/local/bin && mv SPAdes-3.11.1-Linux/share/* /usr/local/share
 RUN rm -rf SPAdes-3.11.1-Linux
 
+# VCFtools
+RUN wget -qO- https://github.com/vcftools/vcftools/releases/download/v0.1.15/vcftools-0.1.15.tar.gz | tar -zx
+RUN cd vcftools-0.1.15 && ./configure --prefix=/usr/local && make && make install
+RUN cd ..
+RUN rm -rf vcftools-0.1.15
+
 # clean up
-RUN apt-get clean
+RUN mandb && apt-get clean

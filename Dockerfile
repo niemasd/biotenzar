@@ -1,7 +1,8 @@
 FROM debian:latest
 MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y gcc curl
-RUN curl http://www.microbesonline.org/fasttree/FastTree.c > FastTree.c
-RUN gcc -DUSE_DOUBLE -DOPENMP -fopenmp -O3 -finline-functions -funroll-loops -Wall -o FastTree FastTree.c -lm
-RUN mv FastTree /usr/local/bin && rm FastTree.c && apt-get clean
+RUN apt-get install -y g++ wget perl zlib1g zlib1g-dev pkg-config man-db
+RUN wget -qO- https://github.com/vcftools/vcftools/releases/download/v0.1.15/vcftools-0.1.15.tar.gz | tar -zx
+RUN cd vcftools-0.1.15 && ./configure --prefix=/usr/local && make && make install && mandb
+RUN cd ..
+RUN rm -rf vcftools-0.1.15 && apt-get clean

@@ -8,3 +8,4 @@ Bioinformatics Tools for the Tenzar Platform
 * [MAFFT 7.394](https://mafft.cbrc.jp/alignment/software/)
 * [SAMtools 1.8](http://www.htslib.org/)
 * [SPAdes 3.11.1](http://cab.spbu.ru/software/spades/)
+* [VCFtools 0.1.15](https://vcftools.github.io/index.html)

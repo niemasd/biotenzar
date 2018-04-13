@@ -4,7 +4,7 @@ Bioinformatics Tools for the Tenzar Platform
 * [BEAST 1.8.4](http://beast.community/)
 * [BEAST 2.5.0](http://www.beast2.org/)
 * [bedtools 2.27.1](http://bedtools.readthedocs.io/)
-* [Bowtie 1.2.2](http://bowtie-bio.sourceforge.net/index.shtml)
+* [Bowtie 1.1.2](http://bowtie-bio.sourceforge.net/index.shtml)
 * [Bowtie2 2.3.4.1](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
 * [BWA](https://github.com/lh3/bwa)
 * [Cufflinks 2.2.1](http://cole-trapnell-lab.github.io/cufflinks/)

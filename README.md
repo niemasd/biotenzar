@@ -1,6 +1,7 @@
 # BioTenzar
 Bioinformatics Tools for the Tenzar Platform
 * [Bowtie 1.2.2](http://bowtie-bio.sourceforge.net/index.shtml)
+* [Bowtie2 2.3.4.1](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
 * [BWA](https://github.com/lh3/bwa)
 * [FastTree 2.1](http://www.microbesonline.org/fasttree)
 * [MAFFT 7.394](https://mafft.cbrc.jp/alignment/software/)

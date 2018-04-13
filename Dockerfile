@@ -46,12 +46,7 @@ RUN mv FastTree /usr/local/bin && rm FastTree.c
 RUN apt-get install -y hmmer
 
 # MAFFT
-RUN curl -s https://mafft.cbrc.jp/alignment/software/mafft-7.394-with-extensions-src.tgz | tar -zx
-RUN cd mafft-7.394-with-extensions/core && make clean && make && make install
-RUN cd ../..
-RUN cd mafft-7.394-with-extensions/extensions && make clean && make && make install
-RUN cd ../..
-RUN rm -rf mafft-7.394-with-extensions
+RUN apt-get install -y mafft
 
 # SAMtools
 RUN wget -qO- https://github.com/samtools/samtools/releases/download/1.8/samtools-1.8.tar.bz2 | tar -jx

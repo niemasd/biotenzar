@@ -1,2 +1,2 @@
-# BioTenzar: MAFFT
+# BioTenzar: SPAdes
 Bioinformatics Tools for the Tenzar Platform

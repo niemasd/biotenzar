@@ -1,11 +1,14 @@
 FROM debian:latest
 MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y bzip2 cmake curl default-jre default-jre-headless gcc git g++ htop less libboost-all-dev libbz2-dev liblzma-dev libncurses5-dev libtbb-dev libz-dev make man-db openjdk-8-jre openjdk-8-jre-headless perl pkg-config pypy python python-pip unzip wget zlib1g zlib1g-dev
 
-# pip for pypy
-RUN wget https://bootstrap.pypa.io/get-pip.py && pypy get-pip.py  && rm get-pip.py
+# set up pypy first to avoid conflicts
+RUN apt-get install -y pypy wget
+RUN wget https://bootstrap.pypa.io/get-pip.py && pypy get-pip.py && rm get-pip.py
 RUN for f in easy_install easy_install-2.7 pip pip2 pip2.7 wheel; do mv /usr/local/bin/$f /usr/local/bin/pypy-$f; done
+
+# install all other dependencies
+RUN apt-get install -y bzip2 cmake curl cython default-jre default-jre-headless gcc git g++ htop less libboost-all-dev libbz2-dev libcrypto++9v5 libcurl3-dev liblzma-dev libncurses5-dev libssl-dev libtbb-dev libz-dev make man-db openjdk-8-jre openjdk-8-jre-headless perl pkg-config python python-pip python3 python3-biopython python3-hyphy python3-numpy python3-pip python3-scipy python3-six python3-tornado unzip zlib1g zlib1g-dev
 
 # BCFtools
 RUN wget -qO- https://github.com/samtools/bcftools/releases/download/1.8/bcftools-1.8.tar.bz2 | tar -jx
@@ -45,6 +48,12 @@ RUN apt-get install -y fastqc
 RUN curl http://www.microbesonline.org/fasttree/FastTree.c > FastTree.c
 RUN gcc -DUSE_DOUBLE -DOPENMP -fopenmp -O3 -finline-functions -funroll-loops -Wall -o FastTree FastTree.c -lm
 RUN mv FastTree /usr/local/bin && rm FastTree.c
+
+# HIV-TRACE
+RUN git clone https://github.com/veg/tn93.git && cd tn93 && cmake ./ && make install
+RUN cd ..
+RUN pip3 install hivtrace
+RUN rm -rf tn93
 
 # HMMER
 RUN apt-get install -y hmmer

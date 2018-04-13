@@ -9,6 +9,12 @@ RUN cd bcftools-1.8 && ./configure --prefix=/usr/local && make && make install
 RUN cd ..
 RUN rm -rf bcftools-1.8
 
+# bedtools
+RUN wget -qO- https://github.com/arq5x/bedtools2/releases/download/v2.27.1/bedtools-2.27.1.tar.gz | tar -zx
+RUN cd bedtools2 && make && mv bin/* /usr/local/bin
+RUN cd ..
+RUN rm -rf bedtools2
+
 # Bowtie
 RUN wget -q https://cfhcable.dl.sourceforge.net/project/bowtie-bio/bowtie/1.2.2/bowtie-1.2.2-linux-x86_64.zip && unzip bowtie-1.2.2-linux-x86_64.zip && rm bowtie-1.2.2-linux-x86_64.zip
 RUN mv bowtie-1.2.2-linux-x86_64/bowtie* /usr/local/bin

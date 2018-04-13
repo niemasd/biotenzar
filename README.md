@@ -15,5 +15,5 @@ Bioinformatics Tools for the Tenzar Platform
 * [SAMtools 1.8](http://www.htslib.org/)
 * [SPAdes 3.11.1](http://cab.spbu.ru/software/spades/)
 * [TopHat 2.1.0](http://ccb.jhu.edu/software/tophat/index.shtml)
-* [Trimmomatic 0.36](http://www.usadellab.org/cms/?page=trimmomatic)
+* [Trimmomatic 0.35](http://www.usadellab.org/cms/?page=trimmomatic)
 * [VCFtools 0.1.15](https://vcftools.github.io/index.html)

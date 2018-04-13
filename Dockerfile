@@ -1,7 +1,8 @@
 FROM debian:latest
 MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y gcc curl
-RUN curl http://www.microbesonline.org/fasttree/FastTree.c > FastTree.c
-RUN gcc -DUSE_DOUBLE -DOPENMP -fopenmp -O3 -finline-functions -funroll-loops -Wall -o FastTree FastTree.c -lm
-RUN mv FastTree /usr/local/bin && rm FastTree.c && apt-get clean
+RUN apt-get install -y wget unzip default-jdk
+RUN wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.36.zip && unzip Trimmomatic-0.36.zip && rm Trimmomatic-0.36.zip
+RUN mv Trimmomatic-0.36/trimmomatic-0.36.jar /usr/local/bin
+RUN printf '#!/usr/bin/env bash\njava -jar /usr/local/bin/trimmomatic-0.36.jar\n' > trimmomatic && chmod a+x trimmomatic && mv trimmomatic /usr/local/bin
+RUN rm -rf Trimmomatic-0.36 && apt-get clean

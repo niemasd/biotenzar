@@ -1,2 +1,2 @@
-# BioTenzar: FastTree 2.1
+# BioTenzar: BEAST 1.8.4
 Bioinformatics Tools for the Tenzar Platform

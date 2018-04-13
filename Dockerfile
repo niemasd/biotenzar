@@ -9,10 +9,9 @@ RUN cd bcftools-1.8 && ./configure --prefix=/usr/local && make && make install
 RUN cd ..
 RUN rm -rf bcftools-1.8
 
-# BEAST 1.8.4
-RUN wget -qO- https://github.com/beast-dev/beast-mcmc/releases/download/v1.8.4/BEASTv1.8.4.tgz | tar -zx
-RUN mv BEASTv1.8.4 /usr/local/bin && ln -s /usr/local/bin/BEASTv1.8.4/bin/* /usr/local/bin
-RUN apt-get clean
+# BEAST 2.5.0
+RUN wget -qO- https://github.com/CompEvol/beast2/releases/download/v2.5.0/BEAST.v2.5.0.Linux.tgz | tar -zx
+RUN mv beast /usr/local/bin/beast_files && ln -s /usr/local/bin/beast_files/bin/* /usr/local/bin
 
 # bedtools
 RUN wget -qO- https://github.com/arq5x/bedtools2/releases/download/v2.27.1/bedtools-2.27.1.tar.gz | tar -zx

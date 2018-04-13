@@ -2,8 +2,6 @@ FROM debian:latest
 MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
 RUN apt-get update && apt-get -y upgrade
 RUN apt-get install -y curl g++ cmake zlib1g zlib1g-dev libbz2-dev
-RUN curl -s http://cab.spbu.ru/files/release3.11.1/SPAdes-3.11.1.tar.gz | tar -zx
-RUN cd SPAdes-3.11.1
-RUN cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="/usr/local" "$(pwd)/src" && make && make install
-RUN cd ..
-RUN rm -rf SPAdes-3.11.1 && apt-get clean
+RUN curl -s http://cab.spbu.ru/files/release3.11.1/SPAdes-3.11.1-Linux.tar.gz | tar -zx
+RUN mv SPAdes-3.11.1-Linux/bin/* /usr/local/bin && mv SPAdes-3.11.1-Linux/share/* /usr/local/share
+RUN rm -rf SPAdes-3.11.1-Linux && apt-get clean

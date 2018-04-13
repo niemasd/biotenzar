@@ -1,7 +1,7 @@
 FROM debian:latest
 MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y bzip2 cmake curl gcc git g++ less libbz2-dev liblzma-dev libncurses5-dev libtbb-dev libz-dev make man-db perl python python-pip unzip wget zlib1g zlib1g-dev
+RUN apt-get install -y bzip2 cmake curl gcc git g++ less libbz2-dev liblzma-dev libncurses5-dev libtbb-dev libz-dev make man-db perl pkg-config python python-pip unzip wget zlib1g zlib1g-dev
 
 # BCFtools
 RUN wget -qO- https://github.com/samtools/bcftools/releases/download/1.8/bcftools-1.8.tar.bz2 | tar -jx

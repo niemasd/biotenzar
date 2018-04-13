@@ -43,10 +43,7 @@ RUN gcc -DUSE_DOUBLE -DOPENMP -fopenmp -O3 -finline-functions -funroll-loops -Wa
 RUN mv FastTree /usr/local/bin && rm FastTree.c
 
 # HMMER
-RUN curl -s http://eddylab.org/software/hmmer3/3.1b2/hmmer-3.1b2.tar.gz | tar -zx
-RUN cd hmmer-3.1b2 && ./configure --prefix=/usr/local && make && make install
-RUN cd ..
-RUN rm -rf hmmer-3.1b2
+RUN apt-get install -y hmmer
 
 # MAFFT
 RUN curl -s https://mafft.cbrc.jp/alignment/software/mafft-7.394-with-extensions-src.tgz | tar -zx

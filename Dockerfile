@@ -3,6 +3,12 @@ MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
 RUN apt-get update && apt-get -y upgrade
 RUN apt-get install -y bzip2 cmake curl gcc git g++ less libbz2-dev liblzma-dev libncurses5-dev libtbb-dev libz-dev make man-db perl python python-pip unzip wget zlib1g zlib1g-dev
 
+# BCFtools
+RUN wget -qO- https://github.com/samtools/bcftools/releases/download/1.8/bcftools-1.8.tar.bz2 | tar -jx
+RUN cd bcftools-1.8 && ./configure --prefix=/usr/local && make && make install
+RUN cd ..
+RUN rm -rf bcftools-1.8
+
 # Bowtie
 RUN wget -q https://cfhcable.dl.sourceforge.net/project/bowtie-bio/bowtie/1.2.2/bowtie-1.2.2-linux-x86_64.zip && unzip bowtie-1.2.2-linux-x86_64.zip && rm bowtie-1.2.2-linux-x86_64.zip
 RUN mv bowtie-1.2.2-linux-x86_64/bowtie* /usr/local/bin

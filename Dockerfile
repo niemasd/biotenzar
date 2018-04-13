@@ -55,6 +55,12 @@ RUN curl -s http://cab.spbu.ru/files/release3.11.1/SPAdes-3.11.1-Linux.tar.gz | 
 RUN mv SPAdes-3.11.1-Linux/bin/* /usr/local/bin && mv SPAdes-3.11.1-Linux/share/* /usr/local/share
 RUN rm -rf SPAdes-3.11.1-Linux
 
+# TopHat
+RUN curl -s http://ccb.jhu.edu/software/tophat/downloads/tophat-2.1.1.tar.gz | tar -zx
+RUN cd tophat-2.1.1 && ./configure --prefix=/usr/local && make && make install
+RUN cd ..
+RUN rm -rf tophat-2.1.1
+
 # VCFtools
 RUN wget -qO- https://github.com/vcftools/vcftools/releases/download/v0.1.15/vcftools-0.1.15.tar.gz | tar -zx
 RUN cd vcftools-0.1.15 && ./configure --prefix=/usr/local && make && make install

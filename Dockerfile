@@ -65,6 +65,9 @@ RUN apt-get install -y mafft
 RUN pypy-pip install PyGLtools
 RUN git clone https://github.com/billgreenwald/pgltools.git && mv pgltools /usr/local/bin/pgltools_files && ln -s /usr/local/bin/pgltools_files/sh/pgltools /usr/local/bin/pgltools
 
+# RAxML
+RUN apt-get install -y raxml
+
 # SAMtools
 RUN wget -qO- https://github.com/samtools/samtools/releases/download/1.8/samtools-1.8.tar.bz2 | tar -jx
 RUN cd samtools-1.8 && ./configure --prefix=/usr/local && make && make install

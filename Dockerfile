@@ -78,7 +78,10 @@ RUN cd ..
 RUN rm -rf samtools-1.8
 
 # Seq-Gen
-RUN apt-get install -y seq-gen
+RUN wget -qO- https://github.com/rambaut/Seq-Gen/archive/1.3.4.tar.gz | tar -zx
+RUN cd Seq-Gen-1.3.4/source && make && mv seq-gen /usr/local/bin
+RUN cd ../..
+RUN rm -rf Seq-Gen-1.3.4
 
 # SPAdes
 RUN curl -s http://cab.spbu.ru/files/release3.11.1/SPAdes-3.11.1-Linux.tar.gz | tar -zx

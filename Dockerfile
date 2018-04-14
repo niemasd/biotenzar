@@ -77,6 +77,9 @@ RUN cd samtools-1.8 && ./configure --prefix=/usr/local && make && make install
 RUN cd ..
 RUN rm -rf samtools-1.8
 
+# Seq-Gen
+RUN apt-get install -y seq-gen
+
 # SPAdes
 RUN curl -s http://cab.spbu.ru/files/release3.11.1/SPAdes-3.11.1-Linux.tar.gz | tar -zx
 RUN mv SPAdes-3.11.1-Linux/bin/* /usr/local/bin && mv SPAdes-3.11.1-Linux/share/* /usr/local/share

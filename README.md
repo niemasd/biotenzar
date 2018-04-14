@@ -17,6 +17,7 @@ Bioinformatics Tools for the Tenzar Platform
 * [pgltools 2.1.4](https://github.com/billgreenwald/pgltools)
 * [RAxML 8.2.4](https://sco.h-its.org/exelixis/web/software/raxml/index.html)
 * [SAMtools 1.8](http://www.htslib.org/)
+* [Seq-Gen 1.3.2x](http://tree.bio.ed.ac.uk/software/seqgen/)
 * [SPAdes 3.11.1](http://cab.spbu.ru/software/spades/)
 * [STAR 2.5.0a](https://github.com/alexdobin/STAR)
 * [TopHat 2.1.0](http://ccb.jhu.edu/software/tophat/index.shtml)

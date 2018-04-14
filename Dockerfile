@@ -9,13 +9,12 @@ RUN cd setuptools-39.0.1 && pypy bootstrap.py && pypy setup.py install
 RUN cd ..
 RUN curl https://pypi.python.org/packages/e0/69/983a8e47d3dfb51e1463c1e962b2ccd1d74ec4e236e232625e353d830ed2/pip-10.0.0.tar.gz | tar -zx
 RUN cd pip-10.0.0 && pypy setup.py install
-RUN for f in 
 RUN cd ..
 RUN curl https://pypi.python.org/packages/5d/c1/45947333669b31bc6b4933308dd07c2aa2fedcec0a95b14eedae993bd449/wheel-0.31.0.tar.gz | tar -zx
 RUN cd wheel-0.31.0 && pypy setup.py install
 RUN cd ..
-RUN rm -rf setuptools* pip-10.0.0 wheel-0.31.0
 RUN for f in easy_install easy_install-2.7 pip pip2 pip2.7; do mv /usr/local/bin/$f /usr/local/bin/pypy-$f; done
+RUN rm -rf setuptools* pip-10.0.0 wheel-0.31.0
 
 # install all other dependencies
 RUN apt-get install -y autoconf automake bzip2 cmake curl cython default-jre default-jre-headless gcc git g++ htop less libboost-all-dev libbz2-dev libcrypto++-dev libcurl3-dev libhdf5-dev libkrb5-dev liblzma-dev libncurses5-dev libssl-dev libtbb-dev libz-dev make man-db openjdk-8-jre openjdk-8-jre-headless perl pkg-config python python-pip python3 python3-biopython python3-numpy python3-pip python3-scipy python3-six python3-tornado rsync unzip wget zlib1g zlib1g-dev

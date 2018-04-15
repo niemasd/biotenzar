@@ -17,7 +17,7 @@ RUN for f in easy_install easy_install-2.7 pip pip2 pip2.7; do mv /usr/local/bin
 RUN rm -rf setuptools* pip-10.0.0 wheel-0.31.0
 
 # install all other dependencies
-RUN apt-get install -y autoconf automake bzip2 cmake curl cython default-jre default-jre-headless gcc git g++ htop less libboost-all-dev libbz2-dev libcrypto++-dev libcurl3-dev libhdf5-dev libkrb5-dev liblzma-dev libncurses5-dev libssl-dev libtbb-dev libz-dev make man-db openjdk-8-jre openjdk-8-jre-headless parallel perl pigz pkg-config python python-pip python3 python3-biopython python3-numpy python3-pip python3-scipy python3-six python3-tornado rsync unzip wget zlib1g zlib1g-dev
+RUN apt-get install -y autoconf automake bzip2 cmake curl cython default-jre default-jre-headless gcc git g++ htop less libboost-all-dev libbz2-dev libcrypto++-dev libcurl3-dev libgomp1 libhdf5-dev libkrb5-dev liblzma-dev libncurses5-dev libssl-dev libtbb-dev libz-dev make man-db openjdk-8-jre openjdk-8-jre-headless parallel perl pigz pkg-config python python-pip python3 python3-biopython python3-numpy python3-pip python3-scipy python3-setuptools python3-six python3-tornado rsync unzip wget zlib1g zlib1g-dev
 
 # BCFtools
 RUN wget -qO- https://github.com/samtools/bcftools/releases/download/1.8/bcftools-1.8.tar.bz2 | tar -jx
@@ -72,6 +72,16 @@ RUN apt-get install -y mafft
 
 # MrBayes
 RUN apt-get install -y mrbayes
+
+# PASTA
+RUN cd /usr/local/bin
+RUN git clone https://github.com/smirarab/pasta.git
+RUN git clone https://github.com/smirarab/sate-tools-linux.git
+RUN cd sate-tools-linux && git checkout d78ef029b533e4f4ac13ba1e9cfdac7944b1f70e && cd ..
+RUN cd pasta && python3 setup.py develop
+RUN rm /usr/local/bin/run_pasta_gui.py
+RUN cd
+ENV CONTRALIGN_DIR /usr/local/bin/sate-tools-linux
 
 # pgltools
 RUN pypy-pip install PyGLtools

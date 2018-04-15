@@ -1,7 +1,12 @@
 FROM debian:latest
 MAINTAINER Niema Moshiri <niemamoshiri@gmail.com>
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y gcc curl
-RUN curl http://www.microbesonline.org/fasttree/FastTree.c > FastTree.c
-RUN gcc -DUSE_DOUBLE -DOPENMP -fopenmp -O3 -finline-functions -funroll-loops -Wall -o FastTree FastTree.c -lm
-RUN mv FastTree /usr/local/bin && rm FastTree.c && apt-get clean
+RUN apt-get install -y python3 python3-setuptools openjdk-8-jre git libgomp1
+RUN cd /usr/local/bin
+RUN git clone https://github.com/smirarab/pasta.git
+RUN git clone https://github.com/smirarab/sate-tools-linux.git
+RUN cd sate-tools-linux && git checkout d78ef029b533e4f4ac13ba1e9cfdac7944b1f70e && cd ..
+RUN cd pasta && python3 setup.py develop
+RUN rm /usr/local/bin/run_pasta_gui.py
+ENV CONTRALIGN_DIR /usr/local/bin/sate-tools-linux
+RUN apt-get clean

@@ -110,6 +110,11 @@ RUN rm -rf SPAdes-3.11.1-Linux
 # STAR
 RUN apt-get install -y rna-star
 
+# tn93
+RUN git clone https://github.com/veg/tn93.git
+RUN cd tn93 && cmake && make install && cd ..
+RUN rm -rf tn93 && apt-get clean
+
 # TopHat
 RUN apt-get install -y tophat
 
